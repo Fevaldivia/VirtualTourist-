@@ -22,11 +22,16 @@ class TravelMapViewController: UIViewController {
     }
     
     @objc func addPin(gestureRecognizer: UILongPressGestureRecognizer) {
-        print("you are inside the addPin function")
         if gestureRecognizer.state == .began {
-            print("the gesture just started")
+            let touchLocation = gestureRecognizer.location(in: mapView)
+            let locationCoordinate = mapView.convert(touchLocation, toCoordinateFrom: mapView)
+            
+            Pin.latitude = locationCoordinate.latitude
+            Pin.longitude = locationCoordinate.longitude
+            
+            print(Pin.latitude, Pin.longitude)
         }else if gestureRecognizer.state == .ended {
-            print("Added Pin")
+            
         }
     }
 

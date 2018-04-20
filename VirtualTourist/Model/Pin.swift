@@ -9,8 +9,8 @@
 import Foundation
 
 struct Pin {
-    static var longitude: Float? = nil
-    static var latitude: Float? = nil
+    static var longitude: Double? = nil
+    static var latitude: Double? = nil
 }
 
 let shareInstance = Pin()
