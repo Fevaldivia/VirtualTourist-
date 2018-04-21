@@ -29,7 +29,11 @@ class TravelMapViewController: UIViewController {
             Pin.latitude = locationCoordinate.latitude
             Pin.longitude = locationCoordinate.longitude
             
-            print(Pin.latitude, Pin.longitude)
+            let annotation = MKPointAnnotation()
+            
+            annotation.coordinate = CLLocationCoordinate2D(latitude: Pin.latitude!, longitude: Pin.longitude!)
+            
+            mapView.addAnnotation(annotation)
         }else if gestureRecognizer.state == .ended {
             
         }
