@@ -7,10 +7,15 @@
 //
 import UIKit
 import MapKit
+import CoreData
 
 class TravelMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    
+    var dataController:DataController!
+    
+    var pins:[Pin] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,25 +24,41 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
         // Instantiate gesture recognizer for mapview
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(addPin))
         mapView.addGestureRecognizer(gestureRecognizer)
+        //MARK: Fetch Request
+        let fetchRequest:NSFetchRequest<Pin> = Pin.fetchRequest()
+        
+        if let result = try? dataController.viewContext.fetch(fetchRequest) {
+            pins = result
+            loadPins()
+        }
     }
     
     @objc func addPin(gestureRecognizer: UILongPressGestureRecognizer) {
         if gestureRecognizer.state == .began {
+            
             let touchLocation = gestureRecognizer.location(in: mapView)
             let locationCoordinate = mapView.convert(touchLocation, toCoordinateFrom: mapView)
-            
-            Pin.latitude = locationCoordinate.latitude
-            Pin.longitude = locationCoordinate.longitude
-            
+            // creating a new pin
+            let pin = Pin(context: dataController.viewContext)
+            pin.latitude = locationCoordinate.latitude
+            pin.longitude = locationCoordinate.longitude
+            // saving to the persistant store
+            try? dataController.viewContext.save()
+            pins.insert(pin, at: 0)
+            // everytime that our tap begin we reaload the pins
+            loadPins()
+        }   
+    }
+    
+    func loadPins() {
+        for location in pins {
             let annotation = MKPointAnnotation()
-            
-            annotation.coordinate = CLLocationCoordinate2D(latitude: Pin.latitude!, longitude: Pin.longitude!)
-            
+            annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             mapView.addAnnotation(annotation)
-        }else if gestureRecognizer.state == .ended {
-            
         }
     }
+    
+    
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
         //TODO: Implement push to the next controller
