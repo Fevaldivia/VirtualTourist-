@@ -16,6 +16,7 @@
 		51C5E606208C34FB00A9AF00 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E605208C34FB00A9AF00 /* PhotoAlbumViewController.swift */; };
 		51C5E609208CC7DE00A9AF00 /* VirtualTourist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E607208CC7DE00A9AF00 /* VirtualTourist.xcdatamodeld */; };
 		51C5E60B208CCED400A9AF00 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E60A208CCED400A9AF00 /* DataController.swift */; };
+		51C5E60E208D3EF300A9AF00 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E60D208D3EF300A9AF00 /* MapLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		51C5E605208C34FB00A9AF00 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
 		51C5E608208CC7DE00A9AF00 /* VirtualTourist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VirtualTourist.xcdatamodel; sourceTree = "<group>"; };
 		51C5E60A208CCED400A9AF00 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		51C5E60D208D3EF300A9AF00 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		51C5E5FF2086CA7400A9AF00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				51C5E60C208D3ED500A9AF00 /* MapClient */,
 				51C5E60A208CCED400A9AF00 /* DataController.swift */,
 				51C5E607208CC7DE00A9AF00 /* VirtualTourist.xcdatamodeld */,
 			);
@@ -98,6 +101,14 @@
 				51C5E605208C34FB00A9AF00 /* PhotoAlbumViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		51C5E60C208D3ED500A9AF00 /* MapClient */ = {
+			isa = PBXGroup;
+			children = (
+				51C5E60D208D3EF300A9AF00 /* MapLocation.swift */,
+			);
+			path = MapClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 			files = (
 				51C5E6022086CCE600A9AF00 /* GCD+Alerts.swift in Sources */,
 				51C5E60B208CCED400A9AF00 /* DataController.swift in Sources */,
+				51C5E60E208D3EF300A9AF00 /* MapLocation.swift in Sources */,
 				51C5E609208CC7DE00A9AF00 /* VirtualTourist.xcdatamodeld in Sources */,
 				51C5E5EF2086CA4400A9AF00 /* TravelMapViewController.swift in Sources */,
 				51C5E606208C34FB00A9AF00 /* PhotoAlbumViewController.swift in Sources */,

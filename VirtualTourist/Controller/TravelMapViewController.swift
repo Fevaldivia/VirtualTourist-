@@ -63,7 +63,14 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
         //TODO: Implement push to the next controller
         let selectedAnnotation = view.annotation
-        print("this pin latitude: \(selectedAnnotation!.coordinate.latitude), and longitude: \(selectedAnnotation!.coordinate.longitude)")
+        
+        MapClient.latitude = selectedAnnotation!.coordinate.latitude
+        MapClient.longitude = selectedAnnotation!.coordinate.longitude
+        
+         mapView.deselectAnnotation(view.annotation, animated: true)
+        
+        let controller = storyboard!.instantiateViewController(withIdentifier: "PhotoAlbum") as? UIViewController
+        present(controller!, animated: true, completion: nil)
     }
 
 }
