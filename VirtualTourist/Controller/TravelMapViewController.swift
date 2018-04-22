@@ -44,20 +44,16 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
             pin.longitude = locationCoordinate.longitude
             // saving to the persistant store
             try? dataController.viewContext.save()
-            print("We successfully save the data!")
-            pins.append(pin)
-            print("Added a pin to my array")
+            pins.insert(pin, at: 0)
             // everytime that our tap begin we reaload the pins
             loadPins()
-        }
+        }   
     }
     
     func loadPins() {
         for location in pins {
             let annotation = MKPointAnnotation()
-            
             annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-            
             mapView.addAnnotation(annotation)
         }
     }
