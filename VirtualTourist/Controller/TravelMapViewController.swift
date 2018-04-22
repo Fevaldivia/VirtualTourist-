@@ -8,15 +8,15 @@
 import UIKit
 import MapKit
 
-class TravelMapViewController: UIViewController {
+class TravelMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Assign map delegate to itself, to use classes
         mapView.delegate = self
-        
+        // Instantiate gesture recognizer for mapview
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(addPin))
         mapView.addGestureRecognizer(gestureRecognizer)
     }
@@ -39,15 +39,6 @@ class TravelMapViewController: UIViewController {
         }
     }
 
-}
-
-extension TravelMapViewController: MKMapViewDelegate {
-    
-    
-
-
-    
-    
 }
 
 
