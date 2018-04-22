@@ -14,6 +14,7 @@
 		51C5E5F72086CA4500A9AF00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C5E5F52086CA4500A9AF00 /* LaunchScreen.storyboard */; };
 		51C5E6022086CCE600A9AF00 /* GCD+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E6012086CCE600A9AF00 /* GCD+Alerts.swift */; };
 		51C5E60420896DC500A9AF00 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E60320896DC500A9AF00 /* Pin.swift */; };
+		51C5E606208C34FB00A9AF00 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E605208C34FB00A9AF00 /* PhotoAlbumViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		51C5E5F82086CA4500A9AF00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51C5E6012086CCE600A9AF00 /* GCD+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GCD+Alerts.swift"; sourceTree = "<group>"; };
 		51C5E60320896DC500A9AF00 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		51C5E605208C34FB00A9AF00 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				51C5E5EE2086CA4400A9AF00 /* TravelMapViewController.swift */,
+				51C5E605208C34FB00A9AF00 /* PhotoAlbumViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				51C5E6022086CCE600A9AF00 /* GCD+Alerts.swift in Sources */,
 				51C5E60420896DC500A9AF00 /* Pin.swift in Sources */,
 				51C5E5EF2086CA4400A9AF00 /* TravelMapViewController.swift in Sources */,
+				51C5E606208C34FB00A9AF00 /* PhotoAlbumViewController.swift in Sources */,
 				51C5E5ED2086CA4400A9AF00 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

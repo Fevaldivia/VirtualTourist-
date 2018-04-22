@@ -38,6 +38,11 @@ class TravelMapViewController: UIViewController, MKMapViewDelegate {
             
         }
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
+        //TODO: Implement push to the next controller
+       print("I tapped on ones of the pins!")
+    }
 
 }
 
