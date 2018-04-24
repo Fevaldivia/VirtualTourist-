@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  MapLocation.swift
 //  VirtualTourist
 //
 //  Created by Felipe Valdivia on 4/22/18.
