@@ -73,9 +73,8 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-du-ZrI">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jam-du-ZrI">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rwF-Wl-XwP"/>
                                     <barButtonItem title="New Collection" id="gfc-x9-esG"/>
@@ -84,6 +83,11 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jam-du-ZrI" firstAttribute="bottom" secondItem="cIy-Bp-bmo" secondAttribute="bottom" id="Vx2-w2-yjy"/>
+                            <constraint firstItem="Jam-du-ZrI" firstAttribute="leading" secondItem="cIy-Bp-bmo" secondAttribute="leading" id="nWC-2P-EAX"/>
+                            <constraint firstItem="Jam-du-ZrI" firstAttribute="trailing" secondItem="cIy-Bp-bmo" secondAttribute="trailing" id="oYd-aK-SZU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cIy-Bp-bmo"/>
                     </view>
                     <connections>
