@@ -6,7 +6,6 @@
 //  Copyright © 2018 Felipe Valdivia. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import MapKit
 import CoreData
@@ -31,6 +30,28 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
         let pinLocation = CLLocationCoordinate2D(latitude: MapClient.latitude!, longitude: MapClient.longitude!)
         let viewRegion = MKCoordinateRegionMakeWithDistance(pinLocation, 500, 500)
         mapView.setRegion(viewRegion, animated: false)
+    }
+    
+    
+    
+    
+    
+    
+    
+    // MARK: Create url for flickr
+    private func FlickrUrlFromParameters(parameters: [String:AnyObject]) -> URL {
+        var components = URLComponents()
+        
+        components.scheme = Constants.Flickr.APIScheme
+        components.host = Constants.Flickr.APIHost
+        components.path = Constants.Flickr.APIPath
+        components.queryItems = [URLQueryItem]()
+        
+        for (key, value) in parameters {
+            let queryItem = URLQueryItem(name: key, value: "\(value)")
+            components.queryItems!.append(queryItem)
+        }
+        return components.url!
     }
     
     
