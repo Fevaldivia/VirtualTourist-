@@ -15,6 +15,7 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
     var pin: Pin!
+    var photos:[AnyObject] = []
     
     var dataController:DataController!
     
@@ -41,7 +42,7 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
     // Function to search
     func searchByLatAndLon() {
 
-            // TODO: Set necessary parameters!
+            // MARK: Set necessary parameters!
             let methodParameters: [String: AnyObject] = [
                 Constants.FlickrParameterKeys.Method: Constants.FlickrParameterValues.SearchMethod as AnyObject,
                 Constants.FlickrParameterKeys.APIKey: Constants.FlickrParameterValues.APIKey as AnyObject,
@@ -104,7 +105,9 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
                 print("Couldnt get any photo from the array")
                 return
             }
-            print("photos array: \(photoArray)")
+            
+            self.photos.append(photoArray as AnyObject)
+            print("photos array: \(self.photos)")
             
         }
         task.resume()
