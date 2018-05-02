@@ -111,7 +111,11 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
                 return
             }
             
-            self.photos.append(photoArray as AnyObject)
+            for everyPhoto in photoArray {
+                self.photos.append(everyPhoto as AnyObject)
+            }
+            
+            print("my array with photos: \(self.photos)")
             
             self.performUIUpdatesOnMain {
                 self.collectionView.reloadData()
