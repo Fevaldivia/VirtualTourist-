@@ -10,17 +10,23 @@ import UIKit
 import MapKit
 import CoreData
 
-class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
+class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var pin: Pin!
-    var photos:[AnyObject] = []
+    var photos = [AnyObject]()
     
     var dataController:DataController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView?.reloadData()
+        
         // Assign map delegate to itself, to use classes
         mapView.delegate = self
         //Add annotation
@@ -96,19 +102,20 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
             }
             
             guard let photosDictonary = parsedResult[Constants.FlickrResponseKeys.Photos] as? [String:AnyObject] else {
-                print("Couldnt find any photos")
+                print("Couldnt find any photos in dictonary.")
                 return
             }
-            print("photos Dictonary: \(photosDictonary)" )
-            
-            guard let photoArray = parsedResult[Constants.FlickrResponseKeys.Photo] as? [[String:AnyObject]] else {
+    
+            guard let photoArray = photosDictonary[Constants.FlickrResponseKeys.Photo] as? [[String:AnyObject]] else {
                 print("Couldnt get any photo from the array")
                 return
             }
             
             self.photos.append(photoArray as AnyObject)
-            print("photos array: \(self.photos)")
             
+            self.performUIUpdatesOnMain {
+                self.collectionView.reloadData()
+            }
         }
         task.resume()
     }
@@ -129,6 +136,34 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
         return components.url!
     }
     
+    //MARK: Collection view
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("Total of photos: \(self.photos.count)")
+        return self.photos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoCollectionViewCell
+        
+        let photo = self.photos[(indexPath as NSIndexPath).row]
+        
+        if let imageUrlString = photo[Constants.FlickrResponseKeys.MediumURL] as? String {
+            print("print the imageURLString: \(imageUrlString)")
+            let imageUrl = URL(string: imageUrlString)
+            print("print the imageURL: \(imageUrl!)")
+            
+            if let imageData = try? Data(contentsOf: imageUrl!) {
+                self.performUIUpdatesOnMain {
+                    cell.imageCell?.image = UIImage(data: imageData)
+                    print("print the image data: \(imageData)")
+                }
+            }
+        }
+
+    return cell
+    }
+
     
     @IBAction func goBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)

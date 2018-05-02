@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		513C5A0B2099568D00122351 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513C5A0A2099568D00122351 /* PhotoCollectionViewCell.swift */; };
 		51C5E5ED2086CA4400A9AF00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E5EC2086CA4400A9AF00 /* AppDelegate.swift */; };
 		51C5E5EF2086CA4400A9AF00 /* TravelMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E5EE2086CA4400A9AF00 /* TravelMapViewController.swift */; };
 		51C5E5F22086CA4400A9AF00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C5E5F02086CA4400A9AF00 /* Main.storyboard */; };
@@ -18,9 +19,11 @@
 		51C5E60B208CCED400A9AF00 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E60A208CCED400A9AF00 /* DataController.swift */; };
 		51C5E60E208D3EF300A9AF00 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E60D208D3EF300A9AF00 /* MapLocation.swift */; };
 		51C5E611208EB3F900A9AF00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E610208EB3F900A9AF00 /* Constants.swift */; };
+		51C5E6132097FA6C00A9AF00 /* PhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C5E6122097FA6C00A9AF00 /* PhotoAlbum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		513C5A0A2099568D00122351 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		51C5E5E92086CA4400A9AF00 /* VirtualTourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualTourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C5E5EC2086CA4400A9AF00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51C5E5EE2086CA4400A9AF00 /* TravelMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelMapViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		51C5E60A208CCED400A9AF00 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		51C5E60D208D3EF300A9AF00 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		51C5E610208EB3F900A9AF00 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		51C5E6122097FA6C00A9AF00 /* PhotoAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 				51C5E607208CC7DE00A9AF00 /* VirtualTourist.xcdatamodeld */,
 				51C5E60C208D3ED500A9AF00 /* MapClient */,
 				51C5E60F208EB3E200A9AF00 /* FlickrClient */,
+				51C5E6122097FA6C00A9AF00 /* PhotoAlbum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 			children = (
 				51C5E5EE2086CA4400A9AF00 /* TravelMapViewController.swift */,
 				51C5E605208C34FB00A9AF00 /* PhotoAlbumViewController.swift */,
+				513C5A0A2099568D00122351 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,10 +200,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				51C5E6022086CCE600A9AF00 /* GCD+Alerts.swift in Sources */,
+				513C5A0B2099568D00122351 /* PhotoCollectionViewCell.swift in Sources */,
 				51C5E60B208CCED400A9AF00 /* DataController.swift in Sources */,
 				51C5E60E208D3EF300A9AF00 /* MapLocation.swift in Sources */,
 				51C5E609208CC7DE00A9AF00 /* VirtualTourist.xcdatamodeld in Sources */,
 				51C5E5EF2086CA4400A9AF00 /* TravelMapViewController.swift in Sources */,
+				51C5E6132097FA6C00A9AF00 /* PhotoAlbum.swift in Sources */,
 				51C5E606208C34FB00A9AF00 /* PhotoAlbumViewController.swift in Sources */,
 				51C5E5ED2086CA4400A9AF00 /* AppDelegate.swift in Sources */,
 				51C5E611208EB3F900A9AF00 /* Constants.swift in Sources */,
