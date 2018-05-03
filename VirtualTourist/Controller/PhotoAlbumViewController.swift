@@ -115,8 +115,6 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
                 self.photos.append(everyPhoto as AnyObject)
             }
             
-            print("my array with photos: \(self.photos)")
-            
             self.performUIUpdatesOnMain {
                 self.collectionView.reloadData()
             }
@@ -142,7 +140,6 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
     
     //MARK: Collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("Total of photos: \(self.photos.count)")
         return self.photos.count
     }
     
@@ -153,14 +150,11 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
         let photo = self.photos[(indexPath as NSIndexPath).row]
         
         if let imageUrlString = photo[Constants.FlickrResponseKeys.MediumURL] as? String {
-            print("print the imageURLString: \(imageUrlString)")
             let imageUrl = URL(string: imageUrlString)
-            print("print the imageURL: \(imageUrl!)")
             
             if let imageData = try? Data(contentsOf: imageUrl!) {
                 self.performUIUpdatesOnMain {
                     cell.imageCell?.image = UIImage(data: imageData)
-                    print("print the image data: \(imageData)")
                 }
             }
         }
